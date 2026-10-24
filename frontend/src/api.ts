@@ -89,6 +89,7 @@ export interface ZoomOutResult {
   care?: CareResources;
   id?: string;
   focus?: string;
+  focus_label?: string;
   headline?: string;
   reflection?: string;
   question?: string;

@@ -170,7 +170,7 @@ textarea { resize: vertical; min-height: 120px; line-height: 1.55; }
 .value-row { display: grid; grid-template-columns: 200px 1fr auto; gap: 12px; align-items: start; }
 
 /* ---------- zoom out ---------- */
-.focus-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.focus-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .focus-option { text-align: left; cursor: pointer; border: 1.5px solid var(--line); background: var(--card); border-radius: 16px; padding: 18px; }
 .focus-option.active { border-color: var(--sage); box-shadow: 0 0 0 3px var(--sage-soft); }
 .focus-option h3 { font-size: 18px; }

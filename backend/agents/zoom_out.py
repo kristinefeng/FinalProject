@@ -34,9 +34,27 @@ from retrieval import ai_visible
 from safety import care
 
 FOCUS_PRESETS = {
+    # The weekly step-back is the main use case: the latest week is the focus,
+    # and the last three months are read too, so the week is seen in context.
+    "week": ("This past week, seen against the last three months", 92),
     "season": ("This season of my life (the last three months)", 92),
     "story": ("The whole story so far", None),
 }
+
+
+def _week_focus(entries: list[dict[str, Any]]) -> tuple[str, str]:
+    """(instructions for the agents, short label for the person). The agents get
+    the exact days, so they all agree on what "this week" means."""
+    newest = max(date.fromisoformat(e["date"]) for e in entries)
+    start = newest - timedelta(days=7)
+    days = f"{start:%b} {start.day} to {newest:%b} {newest.day}"
+    focus = (f"This past week ({days}): what it held and how it fits what matters to me. Moments from the last "
+             f"three months are included for context; focus on the week, and draw on older moments only to show "
+             f"what changed or continued.")
+    return focus, f"This week · {start:%b} {start.day}–{newest:%b} {newest.day}"
+
+
+DISPLAY_LABELS = {"season": "This season", "story": "The whole story"}
 # Up to this many moments (~10K tokens of journal), Zoom Out reads them all.
 FULL_READ_MAX = int(os.getenv("FULL_READ_MAX", "40"))
 
@@ -64,7 +82,7 @@ def _finish(space: str, kind: str, ledger: Ledger, trace: list, status: str) -> 
     return db.save_run(space, kind, ledger.model, ledger.total_cost_usd, ledger.snapshot(), trace, status)
 
 
-async def zoom_out(space: str, preset: str = "season", question: str | None = None) -> dict[str, Any]:
+async def zoom_out(space: str, preset: str = "week", question: str | None = None) -> dict[str, Any]:
     entries = db.list_entries(space)
     held = care.recent_care_entry(entries)
     if held:
@@ -74,8 +92,13 @@ async def zoom_out(space: str, preset: str = "season", question: str | None = No
     if len(visible) < 3:
         return {"status": "too_few", "message": "Save at least three moments first. Zoom Out needs a few to connect."}
 
-    label, days = FOCUS_PRESETS.get(preset, FOCUS_PRESETS["season"])
+    label, days = FOCUS_PRESETS.get(preset, FOCUS_PRESETS["week"])
+    display = DISPLAY_LABELS.get(preset, label)
+    if preset == "week" or preset not in FOCUS_PRESETS:
+        label, display = _week_focus(visible)
     focus = question.strip()[:300] if question and question.strip() else label
+    if question and question.strip():
+        display = focus
     since = None if question and question.strip() else _since(visible, days)
     ns = db.get_north_star(space)
     value_names = [v.get("name", "") for v in ns.get("values", [])]
@@ -132,6 +155,7 @@ async def zoom_out(space: str, preset: str = "season", question: str | None = No
     payload = {
         "status": "ok",
         "focus": focus,
+        "focus_label": display,
         "since": since,
         "headline": reflection.headline,
         "reflection": reflection.reflection,

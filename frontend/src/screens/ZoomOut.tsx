@@ -32,7 +32,7 @@ export function CareCard({ care }: { care: CareResources }) {
 
 export default function ZoomOut({ ctx }: { ctx: AppCtx }) {
   const { space, state } = ctx;
-  const [preset, setPreset] = useState<"season" | "story" | "ask">("season");
+  const [preset, setPreset] = useState<"week" | "season" | "story" | "ask">("week");
   const [question, setQuestion] = useState("");
   const [running, setRunning] = useState(false);
   const [stepIdx, setStepIdx] = useState(0);
@@ -75,12 +75,16 @@ export default function ZoomOut({ ctx }: { ctx: AppCtx }) {
     <div className="stack" style={{ gap: 30 }}>
       <div>
         <div className="eyebrow">Zoom Out</div>
-        <h1 style={{ marginTop: 6 }}>Step back and see the bigger picture.</h1>
-        <p className="lede">Three agents read your moments next to your North Star. Every observation comes with the exact words it's based on, and you get the last word.</p>
+        <h1 style={{ marginTop: 6 }}>Your weekly step-back.</h1>
+        <p className="lede">Five minutes to see the bigger picture of your life, in your own words. Every observation shows the exact words it's based on, and you have the final say.</p>
       </div>
 
       <section className="stack">
         <div className="focus-options">
+          <button className={`focus-option ${preset === "week" ? "active" : ""}`} onClick={() => setPreset("week")}>
+            <h3>This week</h3>
+            <p className="muted small" style={{ margin: "4px 0 0" }}>Your latest week, seen against the last three months.</p>
+          </button>
           <button className={`focus-option ${preset === "season" ? "active" : ""}`} onClick={() => setPreset("season")}>
             <h3>This season</h3>
             <p className="muted small" style={{ margin: "4px 0 0" }}>The last three months of moments.</p>
@@ -139,7 +143,7 @@ function ResultView({ result, isPast, ctx, photoFor }: { result: ZoomOutResult; 
     <div className="stack" style={{ gap: 26 }}>
       <article className="reflection">
         <div className="row">
-          <div className="eyebrow">{isPast ? "Your last Zoom Out" : "Your bigger picture"} · {result.focus}</div>
+          <div className="eyebrow">{isPast ? "Your last Zoom Out" : "Your bigger picture"} · {result.focus_label || result.focus}</div>
         </div>
         <h1 style={{ marginTop: 10 }}>{result.headline}</h1>
         <p className="text">{result.reflection}</p>

@@ -79,12 +79,12 @@ export default function Home({ ctx }: { ctx: AppCtx }) {
             <circle cx="110" cy="110" r="64" fill="none" stroke="#fff" strokeWidth="2" />
             <circle cx="110" cy="110" r="28" fill="none" stroke="#fff" strokeWidth="2" />
           </svg>
-          <div className="eyebrow" style={{ color: "rgba(255,255,255,.7)" }}>Zoom Out</div>
+          <div className="eyebrow" style={{ color: "rgba(255,255,255,.7)" }}>Your weekly step-back</div>
           <h2 style={{ marginTop: 6 }}>Help me see the bigger picture.</h2>
           <p style={{ margin: "8px 0 18px" }}>
-            Throughline reads your {entries.length} moments next to your North Star and shows you the threads, with your own words as evidence.
+            Five minutes to see what this week held and how it fits what matters to you, with your own words as evidence.
           </p>
-          <button className="btn" onClick={() => go("zoom")}>Zoom out →</button>
+          <button className="btn" onClick={() => go("zoom")}>Zoom out on this week →</button>
         </div>
       </section>
 

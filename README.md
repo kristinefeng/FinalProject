@@ -1,6 +1,8 @@
 # Throughline — your life, in perspective
 
-**Throughline is an AI mirror for your own life.** You save small moments (a few lines, often a photo) and write down what matters to you. When the days start to blur, press **Zoom Out**. Three agents find the threads connecting your moments, quote your own words as evidence for every observation, and ask you one good question. You then tell it what's true, and it adjusts.
+**Throughline is your weekly step-back: five minutes to see the bigger picture of your life, in your own words.**
+
+It's for people in a demanding season (MBA recruiting, a first job, a new baby). You save small moments as you go, a few lines and often a photo, and write down what matters to you. At the end of a week that blurred together, press **Zoom Out**. Three agents show you what the week held, what's quietly slipping and how you've grown, quoting your own words as evidence for every observation, and ask you one good question. You have the final say: tell it what's true, and it listens.
 
 > *"I feel a little more connected to myself, and I have a clearer perspective on my life."*
 
@@ -47,8 +49,8 @@ The only key used is `PORTKEY_API_KEY`, with model `gpt-6-luna` (the course key)
 1. **Explore as Maya.** Maya is a fictional MBA student with 18 saved moments from April to October 2026, most with photos. Her journal is already indexed, so nothing needs to load.
 2. **Today.** A memory resurfaces, there's a gentle check-in prompt, and you can see her North Star (her values).
 3. **Moments.** Her timeline. Each moment shows the **Memory Keeper's** notes: a summary, themes, values, feelings, and a description of the photo. Add your own moment, with a photo if you like, and watch it get indexed.
-4. **Zoom Out → Zoom out.** Takes 10–30 seconds. You get a reflection, a question to sit with, and 1–3 **throughlines**. Each throughline quotes Maya's exact words and links back to the moment.
-5. **Reflect Back.** On a throughline, click **Partly** or **Not me** and say why. The Mirror listens instead of arguing, and may suggest a change to the North Star. **Nothing changes unless you click Accept.**
+4. **Zoom Out → Zoom out.** *This week* is selected by default. It takes 10–30 seconds. You get a reflection, a question to sit with, and 1–3 **throughlines**. Each throughline quotes Maya's exact words and links back to the moment.
+5. **Reflect Back.** On a throughline, click **Partly** or **Not me** and say why. The Mirror listens and adjusts, and may suggest a change to the North Star. **Nothing changes unless you click Accept.**
 6. Open **How this was made** under the reflection. It shows every agent step, every tool call with its arguments and results, the grounding check, and the tokens and cost of each step.
 7. **Cost.** Real token counts and costs for every run on this machine, plus per-user and 10,000-user estimates.
 

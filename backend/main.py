@@ -144,7 +144,7 @@ def put_north_star(space: str, body: NorthStarIn) -> dict[str, Any]:
 
 
 class ZoomOutIn(BaseModel):
-    preset: str = "season"
+    preset: str = "week"
     question: str | None = None
 
 

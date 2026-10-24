@@ -167,11 +167,12 @@ function Welcome({ onChoose }: { onChoose: (s: Space) => void }) {
           <Logo size={44} />
           <span className="brand-name">throughline</span>
         </div>
-        <h1 style={{ fontSize: 36 }}>A mirror for the life you're living.</h1>
+        <h1 style={{ fontSize: 36 }}>Your weekly step-back.</h1>
         <p className="lede">
-          Save small moments with a photo. Write down what matters to you. When the days blur together, press
-          <b> Zoom Out</b>: Throughline finds the threads connecting your moments, shows you the exact words behind
-          every observation, and asks one good question.
+          Life doesn't come with a handbook, and most weeks we're too busy living it to step back. Save small
+          moments as you go, a line and a photo, and write down what matters to you. When a week blurs together,
+          press <b>Zoom Out</b>: Throughline shows you the bigger picture in your own words and asks one good
+          question. You have the final say.
         </p>
         <div className="grid grid-2" style={{ marginTop: 28 }}>
           <button className="choice" onClick={() => onChoose("demo")}>
