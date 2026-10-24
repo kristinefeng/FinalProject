@@ -294,6 +294,7 @@ export function TraceView({ trace, ledger, dropped, notes }: { trace: TraceStep[
                 </div>
               ))}
               {t.agent === "Memory Keeper" && notes && <div className="small" style={{ marginTop: 4 }}>Picked {t.output?.memory_ids?.length} moments: {notes}</div>}
+              {t.agent === "Router" && <div className="small" style={{ marginTop: 4 }}>{t.output?.note}</div>}
               {t.agent === "Grounding check" && (
                 <div className="small" style={{ marginTop: 4 }}>
                   {dropped && dropped.length ? (

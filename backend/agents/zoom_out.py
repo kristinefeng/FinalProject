@@ -1,17 +1,25 @@
 """Zoom Out: the hand-off between the three agents, run in a fixed order.
 
-    safety checks (code) -> Memory Keeper (finds moments, tools)
+    safety checks (code) -> router (code): read in full, or search?
+                         -> Memory Keeper (searches, tools) when searching
                          -> Pattern Finder (names throughlines, tools)
                          -> grounding check (code; drops unverifiable quotes)
                          -> Mirror (writes the reflection)
 
 The order is fixed in code rather than chosen by a boss agent: every Zoom Out
-needs the same three steps, a fixed pipeline is cheaper and predictable, and
-each step's output can be checked before the next one starts.
+needs the same steps, a fixed pipeline is cheaper and predictable, and each
+step's output can be checked before the next one starts.
+
+Why the router: in backend/experiments/cost_experiment.py, sending all 18 demo
+moments cost ~35% less than letting the Memory Keeper search (the full journal
+is an identical, chronological prompt, so ~87% of it is read from the prompt
+cache) and cited more moments, with no loss in grounding. Search earns its
+keep for a specific question, or once a journal is too long to read in full.
 """
 
 from __future__ import annotations
 
+import os
 from datetime import date, timedelta
 from typing import Any
 
@@ -29,6 +37,8 @@ FOCUS_PRESETS = {
     "season": ("This season of my life (the last three months)", 92),
     "story": ("The whole story so far", None),
 }
+# Up to this many moments (~10K tokens of journal), Zoom Out reads them all.
+FULL_READ_MAX = int(os.getenv("FULL_READ_MAX", "40"))
 
 
 def _since(entries: list[dict[str, Any]], days: int | None) -> str | None:
@@ -62,9 +72,28 @@ async def zoom_out(space: str, preset: str = "season", question: str | None = No
 
     ledger = Ledger(MODEL_NAME, spent_today_usd=db.spent_today())
     trace: list[dict[str, Any]] = []
+    in_window = sorted((e for e in visible if not since or e["date"] >= since), key=lambda e: e["date"])
+    if len(in_window) < 3:  # a quiet season: widen to the whole journal
+        since, in_window = None, sorted(visible, key=lambda e: e["date"])
+    read_in_full = not (question and question.strip()) and len(in_window) <= FULL_READ_MAX
     try:
-        memory_ids, notes, step = await find_memories(space, focus, since, value_names, ledger)
-        trace.append(step)
+        if read_in_full:
+            memory_ids = [e["id"] for e in in_window]
+            notes = f"All {len(memory_ids)} moments in this window were read in full."
+            trace.append({
+                "agent": "Router",
+                "step": "Decide how to gather moments (plain code, no AI)",
+                "status": "ok",
+                "output": {"memory_ids": memory_ids, "note": (
+                    f"{len(memory_ids)} moments fit comfortably, so they are read in full instead of searched: "
+                    f"cheaper (the journal prompt is cached) and nothing gets missed. The Memory Keeper searches "
+                    f"when you ask your own question or a journal passes {FULL_READ_MAX} moments.")},
+                "tokens": None,
+                "cost_usd": 0,
+            })
+        else:
+            memory_ids, notes, step = await find_memories(space, focus, since, value_names, ledger)
+            trace.append(step)
         patterns, dropped, steps = await find_patterns(space, focus, memory_ids, ledger)
         trace.extend(steps)
         trace.append({

@@ -4,137 +4,137 @@
   "summary": {
     "retrieval": {
       "moments_sent": 8.0,
-      "cost_usd": 0.002023,
-      "input_tokens": 10702.0,
-      "cached_input_tokens": 2870.0,
-      "output_tokens": 2131.0,
+      "cost_usd": 0.001801,
+      "input_tokens": 10452.0,
+      "cached_input_tokens": 3814.0,
+      "output_tokens": 1947.666667,
       "patterns_kept": 3.0,
-      "evidence_kept": 7.0,
+      "evidence_kept": 7.333333,
       "evidence_dropped": 0.0,
-      "distinct_moments_cited": 6.0,
+      "distinct_moments_cited": 5.333333,
       "tension_or_growth_found_in": "3/3 runs"
     },
     "all_entries": {
       "moments_sent": 18.0,
-      "cost_usd": 0.001474,
-      "input_tokens": 11340.0,
-      "cached_input_tokens": 4970.0,
-      "output_tokens": 1326.0,
+      "cost_usd": 0.001156,
+      "input_tokens": 11421.0,
+      "cached_input_tokens": 9940.0,
+      "output_tokens": 1764.0,
       "patterns_kept": 3.0,
-      "evidence_kept": 9.0,
-      "evidence_dropped": 1.0,
-      "distinct_moments_cited": 9.0,
+      "evidence_kept": 10.666667,
+      "evidence_dropped": 0.0,
+      "distinct_moments_cited": 9.333333,
       "tension_or_growth_found_in": "3/3 runs"
     }
   },
   "photo_size": {
     "768px": {
       "input_tokens": 1192,
-      "cost_usd": 0.00021684999999999999,
-      "photo_description": "A narrow rocky path winds between mossy boulders and dense green trees beneath soft, overcast light, creating a quiet, adventurous mood."
+      "cost_usd": 9.676e-05,
+      "photo_description": "A narrow rocky trail winds through dense green trees and moss-covered boulders in soft, overcast light, creating a quiet, adventurous mood."
     },
     "1600px": {
       "input_tokens": 1872,
-      "cost_usd": 0.00030285,
-      "photo_description": "A rocky path climbs through dense green trees and moss-covered boulders in soft, overcast light, creating a quiet, adventurous mood."
+      "cost_usd": 9.856e-05,
+      "photo_description": "A rocky path winds between mossy boulders and dense green trees in soft, overcast light, creating a quiet, adventurous mood."
     }
   },
   "runs": [
     {
       "mode": "retrieval",
       "moments_sent": 8,
-      "cost_usd": 0.00202315,
-      "input_tokens": 10702,
-      "cached_input_tokens": 2870,
-      "output_tokens": 2131,
+      "cost_usd": 0.0021746450000000002,
+      "input_tokens": 10584,
+      "cached_input_tokens": 2892,
+      "output_tokens": 2465,
       "patterns_kept": 3,
-      "evidence_kept": 7,
+      "evidence_kept": 6,
       "evidence_dropped": 0,
-      "distinct_moments_cited": 6,
+      "distinct_moments_cited": 5,
       "kinds": [
         "alignment",
-        "growth",
-        "tension"
+        "tension",
+        "growth"
       ]
     },
     {
       "mode": "all_entries",
       "moments_sent": 18,
-      "cost_usd": 0.0014739500000000001,
-      "input_tokens": 11340,
-      "cached_input_tokens": 4970,
-      "output_tokens": 1326,
+      "cost_usd": 0.001181725,
+      "input_tokens": 11444,
+      "cached_input_tokens": 9940,
+      "output_tokens": 1809,
       "patterns_kept": 3,
-      "evidence_kept": 9,
-      "evidence_dropped": 1,
+      "evidence_kept": 12,
+      "evidence_dropped": 0,
       "distinct_moments_cited": 9,
       "kinds": [
         "alignment",
-        "growth",
-        "tension"
+        "tension",
+        "growth"
       ]
     },
     {
       "mode": "retrieval",
       "moments_sent": 8,
-      "cost_usd": 0.00202315,
-      "input_tokens": 10702,
-      "cached_input_tokens": 2870,
-      "output_tokens": 2131,
+      "cost_usd": 0.001326015,
+      "input_tokens": 10300,
+      "cached_input_tokens": 5784,
+      "output_tokens": 1504,
       "patterns_kept": 3,
       "evidence_kept": 7,
       "evidence_dropped": 0,
       "distinct_moments_cited": 6,
       "kinds": [
         "alignment",
-        "growth",
-        "tension"
+        "tension",
+        "growth"
       ]
     },
     {
       "mode": "all_entries",
       "moments_sent": 18,
-      "cost_usd": 0.0014739500000000001,
-      "input_tokens": 11340,
-      "cached_input_tokens": 4970,
-      "output_tokens": 1326,
+      "cost_usd": 0.0009504750000000001,
+      "input_tokens": 11394,
+      "cached_input_tokens": 9940,
+      "output_tokens": 1359,
       "patterns_kept": 3,
-      "evidence_kept": 9,
-      "evidence_dropped": 1,
-      "distinct_moments_cited": 9,
+      "evidence_kept": 10,
+      "evidence_dropped": 0,
+      "distinct_moments_cited": 10,
       "kinds": [
         "alignment",
-        "growth",
-        "tension"
+        "tension",
+        "growth"
       ]
     },
     {
       "mode": "retrieval",
       "moments_sent": 8,
-      "cost_usd": 0.00202315,
-      "input_tokens": 10702,
-      "cached_input_tokens": 2870,
-      "output_tokens": 2131,
+      "cost_usd": 0.0019027850000000004,
+      "input_tokens": 10472,
+      "cached_input_tokens": 2766,
+      "output_tokens": 1874,
       "patterns_kept": 3,
-      "evidence_kept": 7,
+      "evidence_kept": 9,
       "evidence_dropped": 0,
-      "distinct_moments_cited": 6,
+      "distinct_moments_cited": 5,
       "kinds": [
-        "alignment",
         "growth",
-        "tension"
+        "tension",
+        "alignment"
       ]
     },
     {
       "mode": "all_entries",
       "moments_sent": 18,
-      "cost_usd": 0.0014739500000000001,
-      "input_tokens": 11340,
-      "cached_input_tokens": 4970,
-      "output_tokens": 1326,
+      "cost_usd": 0.0013368499999999999,
+      "input_tokens": 11425,
+      "cached_input_tokens": 9940,
+      "output_tokens": 2124,
       "patterns_kept": 3,
-      "evidence_kept": 9,
-      "evidence_dropped": 1,
+      "evidence_kept": 10,
+      "evidence_dropped": 0,
       "distinct_moments_cited": 9,
       "kinds": [
         "alignment",
