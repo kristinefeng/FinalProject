@@ -4,7 +4,7 @@
 
 Screenshots from docs/screenshots/ and the diagram are embedded as data URIs,
 so both files open by double-clicking on any computer with every image
-showing. (slides.html loads reveal.js from a CDN, as the assignment suggests.)
+showing. reveal.js is inlined from docs/vendor/, so the slides also work offline.
 """
 
 from __future__ import annotations
@@ -37,10 +37,11 @@ def render(src: str) -> str:
     src = src.replace("{{diagram}}", diagram)
     src = re.sub(r"\{\{img:([\w.-]+)\}\}", lambda m: image_uri(SHOTS / f"{m.group(1)}.jpg"), src)
     src = re.sub(r"\{\{photo:([\w.-]+)\}\}", lambda m: image_uri(PHOTOS / m.group(1), max_width=900), src)
-    leftover = re.findall(r"\{\{[^}]+\}\}", src)
+    leftover = [m for m in re.findall(r"\{\{[^}]+\}\}", src) if not m.startswith("{{vendor:")]
     if leftover:
         raise SystemExit(f"Unfilled placeholders: {leftover}")
-    return src
+    # Vendored libraries go in last, so their own code is never scanned for placeholders.
+    return re.sub(r"\{\{vendor:([\w./-]+)\}\}", lambda m: (DOCS / "vendor" / m.group(1)).read_text(encoding="utf-8"), src)
 
 
 if __name__ == "__main__":
