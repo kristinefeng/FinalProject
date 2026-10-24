@@ -99,7 +99,10 @@ async def release_moment(space: str, entry_id: str) -> dict[str, Any]:
     entry = db.get_entry(space, entry_id)
     result: dict[str, Any] = {"entry": entry}
     if key_is_set():
-        result.update(await index_entry(space, entry))
+        try:
+            result.update(await index_entry(space, entry))
+        except Exception as exc:  # released either way; indexing can be retried
+            result["warning"] = f"Released, but AI notes were skipped ({exc})."
         result["entry"] = db.get_entry(space, entry_id)
     return result
 

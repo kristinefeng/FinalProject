@@ -50,6 +50,16 @@ def _since(entries: list[dict[str, Any]], days: int | None) -> str | None:
     return (newest - timedelta(days=days)).isoformat()
 
 
+def stop_message(step: dict[str, Any]) -> str:
+    if step.get("status") == "blocked":
+        return ("The AI provider's safety filter declined this Zoom Out. That usually means one of your moments "
+                "contains text that reads like instructions to an AI. Nothing was shared or changed. Try "
+                "'Ask your own question', or review moments you released earlier.")
+    if step.get("status") == "error":
+        return "The AI provider had a problem just now. Nothing was changed; please try again in a moment."
+    return "One of the agents hit its step limit, so Zoom Out stopped instead of looping."
+
+
 def _finish(space: str, kind: str, ledger: Ledger, trace: list, status: str) -> str:
     return db.save_run(space, kind, ledger.model, ledger.total_cost_usd, ledger.snapshot(), trace, status)
 
@@ -115,8 +125,8 @@ async def zoom_out(space: str, preset: str = "season", question: str | None = No
         return {"status": "budget", "message": str(exc), "trace": trace, "ledger": ledger.snapshot(), "run_id": run_id}
     except StepFailed as exc:
         trace.append(exc.trace)
-        run_id = _finish(space, "zoom_out", ledger, trace, "stopped")
-        return {"status": "stopped", "message": "One of the agents hit its step limit, so Zoom Out stopped instead of looping.", "trace": trace, "ledger": ledger.snapshot(), "run_id": run_id}
+        run_id = _finish(space, "zoom_out", ledger, trace, exc.trace.get("status", "stopped"))
+        return {"status": "stopped", "message": stop_message(exc.trace), "trace": trace, "ledger": ledger.snapshot(), "run_id": run_id}
 
     run_id = _finish(space, "zoom_out", ledger, trace, "ok")
     payload = {
@@ -152,6 +162,9 @@ async def respond(space: str, insight_id: str, pattern_index: int, verdict: str,
     except BudgetExceeded as exc:
         _finish(space, "reflect_back", ledger, [], "budget_stopped")
         return {"status": "budget", "message": str(exc)}
+    except StepFailed as exc:
+        _finish(space, "reflect_back", ledger, [exc.trace], exc.trace.get("status", "stopped"))
+        return {"status": "stopped", "message": stop_message(exc.trace)}
     feedback_id = db.save_feedback(space, insight_id, pattern_index, pattern["title"], verdict, note, out.reply)
     proposal_id = db.save_proposal(space, feedback_id, proposal) if proposal else None
     run_id = _finish(space, "reflect_back", ledger, [step], "ok")

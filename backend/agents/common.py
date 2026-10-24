@@ -11,8 +11,9 @@ import json
 import time
 from typing import Any
 
+from openai import APIError
 from pydantic_ai import Agent
-from pydantic_ai.exceptions import UsageLimitExceeded
+from pydantic_ai.exceptions import ModelHTTPError, UsageLimitExceeded
 from pydantic_ai.messages import ModelRequest, ModelResponse, ToolCallPart, ToolReturnPart
 from pydantic_ai.models.openai import OpenAIResponsesModelSettings
 from pydantic_ai.usage import UsageLimits
@@ -62,6 +63,14 @@ async def run_step(
     except UsageLimitExceeded as exc:
         trace = {"agent": name, "status": "stopped", "reason": f"request limit of {request_limit} reached", "tools": []}
         raise StepFailed(str(exc), trace) from exc
+    except (ModelHTTPError, APIError) as exc:
+        # The course gateway routes to Azure OpenAI, whose content filter can
+        # refuse a prompt (for example, journal text that reads like a jailbreak).
+        # Fail safely with a clear reason instead of crashing the request.
+        filtered = "content_filter" in str(exc) or "content management policy" in str(exc)
+        reason = "the AI provider's safety filter declined this request" if filtered else f"the AI provider returned an error ({type(exc).__name__})"
+        trace = {"agent": name, "status": "blocked" if filtered else "error", "reason": reason, "tools": []}
+        raise StepFailed(reason, trace) from exc
 
     tools: list[dict[str, Any]] = []
     by_call: dict[str, dict[str, Any]] = {}

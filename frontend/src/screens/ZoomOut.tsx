@@ -179,7 +179,9 @@ function PatternCard({ pattern: p, index, insightId, ctx, photoFor }: { pattern:
     if (!verdict) return;
     setSending(true);
     try {
-      setReply(await api.feedback(ctx.space, insightId, index, verdict, note));
+      const res = await api.feedback(ctx.space, insightId, index, verdict, note);
+      if (res.status === "ok") setReply(res);
+      else ctx.toast(res.message || "Throughline couldn't respond just now.");
     } catch (e: any) {
       ctx.toast(e.message);
     } finally {
