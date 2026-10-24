@@ -140,6 +140,14 @@ export default function App() {
                 Reset demo
               </button>
             )}
+            {space === "me" && (
+              <button onClick={async () => {
+                if (!window.confirm("Delete all of your moments, photos and North Star from this computer? This can't be undone.")) return;
+                await api.resetMe(); await refresh(); toast("Your space was cleared.");
+              }}>
+                Clear my space
+              </button>
+            )}
             <button onClick={() => go("study")}>Help test Throughline</button>
           </span>
         </div>

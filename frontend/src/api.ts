@@ -151,6 +151,7 @@ export const api = {
   health: () => call<{ ok: boolean; key_set: boolean; env_source: string | null; model: string }>("/api/health"),
   state: (s: Space) => call<State>(`/api/${s}/state`),
   resetDemo: () => call("/api/demo/reset", { method: "POST" }),
+  resetMe: () => call("/api/me/reset", { method: "POST" }),
   saveEntry: (s: Space, form: FormData) => call<SaveResult>(`/api/${s}/entries`, { method: "POST", body: form }),
   releaseEntry: (s: Space, id: string) => call<SaveResult>(`/api/${s}/entries/${id}/release`, { method: "POST" }),
   deleteEntry: (s: Space, id: string) => call(`/api/${s}/entries/${id}`, { method: "DELETE" }),

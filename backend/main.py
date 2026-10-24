@@ -70,6 +70,11 @@ def reset_demo() -> dict[str, Any]:
 @app.post("/api/me/reset")
 def reset_me() -> dict[str, Any]:
     db.reset_space("me")
+    folder = db.UPLOADS_DIR / "me"  # photos go with the moments
+    if folder.exists():
+        for f in folder.iterdir():
+            if f.is_file():
+                f.unlink()
     return {"ok": True}
 
 
