@@ -1,0 +1,149 @@
+{
+  "profile": {
+    "name": "Maya",
+    "about": "Maya, 29, taught high-school chemistry in Oakland for six years before moving to New Haven for her MBA, where she is working toward a career in product management."
+  },
+  "north_star": {
+    "values": [
+      {"name": "Connection", "meaning": "The people I can sit around a table with for hours without once checking my phone."},
+      {"name": "Adventure", "meaning": "Saying yes to the unplanned thing: the detour, the new trail, the last-minute drive to the water."},
+      {"name": "Growth", "meaning": "Doing the thing that scares me a little, until one day it doesn't."},
+      {"name": "Health", "meaning": "Moving my body most mornings and sleeping enough to be patient with people."},
+      {"name": "Family", "meaning": "Staying close to Nai Nai and the people who raised me, even from three thousand miles away."}
+    ],
+    "vision": "Five years from now, I want to be building tools that make teachers' lives easier, on a team I actually like eating lunch with. I want to live somewhere I can walk to a trail from my front door and still host a crowded Sunday dinner with not enough chairs. I want to have flown home to see Nai Nai so often that it stops being a plan and becomes a habit. I want to be the good kind of tired, from a full day instead of a full calendar. And I want to have paint on my hands sometimes.",
+    "intentions": [
+      "Visit Nai Nai in Fremont before the end of the year.",
+      "Run three mornings a week, even when school gets busy.",
+      "Say yes more often to plans I didn't make."
+    ]
+  },
+  "entries": [
+    {
+      "id": "e01",
+      "date": "2026-04-05",
+      "title": "Sleeping Giant, unplanned",
+      "text": "Jonah texted at 8:40 this morning: \"Sleeping Giant? Leaving in 20.\" I had a problem set due Tuesday and a plan to do laundry, and I went anyway. Priya was already in the back seat of his Subaru eating a clementine. We went up the Tower Path, which is the easy way, and then Jonah decided we should come down the blue trail, which is mostly rocks and roots and bad decisions. It was still muddy from Thursday's rain. I slipped once and grabbed a birch and Jonah laughed so hard he had to sit down on a boulder. From the stone tower you can see all the way out to the Sound. Nobody mentioned school for almost four hours. On the drive back we stopped at a gas station for egg sandwiches and they were somehow the best thing I've eaten in a month. My calves hurt. The problem set is still not done. I don't really care.",
+      "photo": "hike_sleeping_giant.jpg"
+    },
+    {
+      "id": "e02",
+      "date": "2026-04-08",
+      "title": "Cold call",
+      "text": "Got cold-called in Operations today. Professor Halvorsen said \"Maya, walk us through where the bottleneck is,\" and my whole body went hot. I knew the answer. I had literally highlighted it. But I started with something about the second shift, then backed up, then said \"sorry\" twice, and by the time I got to the actual point he was nodding in that patient way and moving on to someone else. It took maybe ninety seconds. I replayed it the entire walk home. The strange part is that I stood in front of thirty sixteen-year-olds every day for six years and explained stoichiometry to kids who openly did not want to be there, and I was never scared. Something about being the student again. Everyone in that room seems to talk in complete paragraphs. Made rice and eggs and went to bed early.",
+      "photo": null
+    },
+    {
+      "id": "e03",
+      "date": "2026-04-12",
+      "title": "Sunday call with Nai Nai",
+      "text": "Sunday call with Nai Nai. She'd just come back from 99 Ranch with her neighbor Mrs. Lau and needed to tell me the price of gai lan, which is a whole topic. I finally asked her to walk me through the scallion pancakes, the real way, and wrote it all down in my notebook while she talked. Her measurements are \"flour, enough,\" \"hot water, not too much,\" and \"oil, you will see.\" I asked how long to rest the dough and she said \"until it is ready.\" I wrote that down too. Then she asked if I still paint. She still has the watercolor I did of her persimmon tree in high school, taped inside a kitchen cabinet. I said not really, not since I started teaching. I'd like to. She asked when I'm coming home and I said this summer, for sure. She said \"okay, okay,\" the way she does when she doesn't believe me.",
+      "photo": "coffee_notebook.jpg"
+    },
+    {
+      "id": "e04",
+      "date": "2026-04-21",
+      "title": "East Rock before class",
+      "text": "Ran up East Rock this morning before my 8:30. Out the door at 6:05, still half dark, English Drive empty except for one man with a very old golden retriever who looked thrilled to be alive. The top was cold and the city looked small and pink. Third run this week, which is the first time I've managed that since January. I kept thinking about last week's cold call on the way up, and by the summit it felt smaller, like it had happened to a slightly different person. Then I got to class and didn't raise my hand once, so. Progress, not a personality transplant.",
+      "photo": "running_path_dawn.jpg"
+    },
+    {
+      "id": "e05",
+      "date": "2026-05-02",
+      "title": "Wooster Square market",
+      "text": "Saturday market at Wooster Square with Priya. The cherry trees are mostly done, just a few pink petals stuck to the sidewalk. We got there late so the good strawberries were gone, but the farmer at the end table had scallions in bunches as thick as my wrist and I bought three without thinking about what I'd do with them. Priya bought a jar of honey and then a second jar of honey \"for later.\" We sat on a bench with coffee and she told me about her sister's wedding drama for forty-five minutes and I enjoyed every second of it. Somewhere in there we decided I'm making Nai Nai's pancakes next weekend for whoever wants to come. I have to text people before I lose my nerve.",
+      "photo": "farmers_market.jpg"
+    },
+    {
+      "id": "e06",
+      "date": "2026-05-09",
+      "title": "Scallion pancake night",
+      "text": "Pancake night. Priya, Jonah, Dani from upstairs, and Priya's boyfriend Sam, who I'd met exactly once. My apartment has four chairs, so Jonah sat on the radiator. The first batch was a disaster, too thick and raw in the middle, and I set off the smoke alarm while Jonah fanned it with a cutting board and Dani narrated like it was a nature documentary. The second batch was better. By the fourth I had it: roll, coil, flatten, the oil hissing the way it does in Nai Nai's kitchen. They were flaky and a little too salty and everyone kept reaching for more before I'd set the plate down. We stayed at the table until almost 1 a.m. talking about nothing: worst jobs we've ever had, whether Sam can really cook rice without a rice cooker (he cannot). Nobody looked at their phone. I called Nai Nai this morning to report, and the first thing she asked was \"Too salty?\" How does she know.",
+      "photo": "scallion_pancakes.jpg"
+    },
+    {
+      "id": "e07",
+      "date": "2026-05-20",
+      "title": "Finals week",
+      "text": "Last week of first year. I've been living in Sterling with the same three things: a laptop, a cold brew, and a highlighter that's almost dead. The reading room is beautiful and I've been too tired to notice most of the week. Two finals down, one to go. Squeezed in two short runs, which is not three, but I'm counting it. Small thing from this afternoon: I raised my hand in the Ops review session without rehearsing it in my head first. Brightpath sent my start date, June 8, along with a forty-page onboarding doc that I've opened and closed four times.",
+      "photo": "library_study.jpg"
+    },
+    {
+      "id": "e08",
+      "date": "2026-06-10",
+      "title": "The 6:12 to Grand Central",
+      "text": "Third day at Brightpath. I take the 6:12 Metro-North on Tuesdays and Wednesdays and work from my kitchen the rest of the week. The train is honestly the best part: two hours of coastline going by, coffee from the cart at Union Station, nobody needing anything from me yet. The office is nice in a way that's a little intimidating. Everyone has a standing desk and a strong opinion about Notion. My manager, Rachel, is kind and very fast. I'm writing my first spec, for a feature that shows teachers which homework problems a class got stuck on. I know this problem in my bones, and that part feels good. The rest feels like my first week of teaching: smiling a lot and saying \"that makes sense\" when it doesn't quite yet.",
+      "photo": "train_window.jpg"
+    },
+    {
+      "id": "e09",
+      "date": "2026-06-27",
+      "title": "Hammonasset, last minute",
+      "text": "Dani knocked on my door at 11 this morning in a sun hat and said \"Beach. Now. I already made sandwiches.\" I had planned to work on my spec. We drove to Hammonasset with the windows down and her terrible playlist on. The water was freezing. I got in up to my knees and then fully committed because she was watching. We lay on towels for hours and I fell asleep and burned only one shoulder. Around six the light went gold and soft on the water and I had that old itch to paint it, the way I used to want to paint everything. I hadn't brought anything, of course. On the drive home I told Dani I'd promised Nai Nai I'd visit in July. Flights are $480 now. August, maybe. We got soft serve at a stand in Madison and ate it in the parking lot with sand still on our feet.",
+      "photo": "beach_afternoon.jpg"
+    },
+    {
+      "id": "e10",
+      "date": "2026-07-19",
+      "title": "Heat wave Sunday",
+      "text": "Ninety-four degrees today. Dani and I ran the canal trail at 6 a.m. to beat it and still came back soaked. Four slow miles, talking the whole way about her night shifts. Spent the rest of the day in front of the fan doing nothing productive at all. Sunday call with Nai Nai. She dozed off in her chair for a minute in the middle of telling me about her tomato plants, and when she woke up she just kept going like nothing had happened. Mrs. Lau is driving her to her appointments now. She sounds fine. She sounds a little older. After we hung up I opened the flights tab again, looked at a few dates in August, and closed it. Final presentation at Brightpath is in four weeks. I'll figure it out.",
+      "photo": null
+    },
+    {
+      "id": "e11",
+      "date": "2026-08-08",
+      "title": "Porch dinner",
+      "text": "Dinner on Priya's back porch. Everyone is drifting back from summer, Jonah from Seattle and Priya from her consulting internship in Boston, and it felt like the first night of something. Priya made dal, Jonah brought corn from a farm stand off I-91 and grilled it badly, and I made the pancakes again. I didn't call Nai Nai for the recipe this time, which felt like a small graduation. We sat out there until the citronella candle burned all the way down. Jonah told the Lisbon story, the one where he gets lost for six hours, for the third time, and it gets better every time. Fireflies in the yard. Somebody's neighbor playing Fleetwood Mac. Priya's laugh, which is enormous. I was exhausted from the week and I didn't want it to end.",
+      "photo": "dinner_table_friends.jpg"
+    },
+    {
+      "id": "e12",
+      "date": "2026-08-14",
+      "title": "Offer",
+      "text": "Brightpath made me a full-time offer today, starting next August. Rachel called after my final presentation and said the team was really happy with the teacher dashboard work. The number is good, better than I expected. They want an answer by November 1. I called my mom and she cried a little and asked me to forward her the letter. Priya texted a lot of exclamation points. I said thank you to everyone. Then I made pasta, folded laundry, and watched half a movie. Going to bed.",
+      "photo": null
+    },
+    {
+      "id": "e13",
+      "date": "2026-09-07",
+      "title": "East Rock, walking",
+      "text": "Labor Day. Priya and I walked up East Rock at sunset, which is what we do when we want to complain without sitting still. She has a spreadsheet of forty-one companies, color-coded, with a column labeled \"warmth of contact.\" I have the Brightpath offer and a vague feeling that I should see what else is out there, because everyone else is. So I'm recruiting, I guess. Signed up for six coffee chats this week. At the top the harbor was hazy and the city lights were coming on one at a time. Priya asked, \"Do you even want something other than Brightpath?\" and I said, \"I don't know, I just don't want to have not tried,\" which sounded smarter out loud than it does written down. We got pizza at Modern on the way home.",
+      "photo": "east_rock_view.jpg"
+    },
+    {
+      "id": "e14",
+      "date": "2026-09-24",
+      "title": "Rain and coffee chats",
+      "text": "It has rained for four days straight. Five coffee chats this week, mostly on Zoom, and I'm sick of my own story. \"I taught chemistry for six years and realized the tools teachers use are terrible.\" I've said it so many times it sounds like someone else's. Everyone is very nice and everyone says they're happy to pass my resume along. Ethan from my section already has a final round at Google, and I found out on LinkedIn, which is the worst way to find out anything. I spent an hour last night rewriting my resume bullets and ended up exactly where I started. Missed Sunday's call with Nai Nai because of a case prep meeting. Texted her a picture of the rain. She sent back a picture of her tomatoes. I'll call this weekend.",
+      "photo": "rainy_window.jpg"
+    },
+    {
+      "id": "e15",
+      "date": "2026-10-03",
+      "title": "Not a good week",
+      "text": "Not a good week. The email came Tuesday: they went with another candidate after the final round, the one I'd prepped for every night for two weeks. Wednesday our Strategy group had a real fight about the deck, and I said something short to Marcus that I've been apologizing for since. Thursday I slept four hours. I've had cereal for dinner three nights in a row. I keep opening LinkedIn and seeing people from orientation posting offer announcements, and I close it and then open it again ten minutes later. I haven't run in three weeks. My shoes are by the door where I left them. I cried in the car in the Whole Foods parking lot on Friday, mostly from being tired. Tonight Dani knocked with a container of soup and didn't ask about recruiting once. I ate it standing at the counter. It helped more than I expected.",
+      "photo": null
+    },
+    {
+      "id": "e16",
+      "date": "2026-10-11",
+      "title": "A Saturday off",
+      "text": "Jonah showed up at 10 and announced we were going apple picking and that it was not up for discussion. Priya was already in the car again. I'm starting to think this is just how she lives. We took back roads to an orchard out past Durham, and the maples were completely on fire, red and orange in a way that doesn't look real. I didn't check my email for six hours. We picked way too many apples, ate cider donuts in the grass, and Jonah climbed a tree to reach \"the perfect one\" and got briefly stuck. I laughed until my stomach hurt, which hadn't happened in a while. On the drive home I kept staring at the leaves and thinking I should paint this. I think that every October. Called Nai Nai from the back seat. She asked about Thanksgiving. I said maybe.",
+      "photo": "autumn_leaves.jpg"
+    },
+    {
+      "id": "e17",
+      "date": "2026-10-15",
+      "title": "Thursday",
+      "text": "Long day. Coffee chat at 8 with a PM at a health-tech startup in Boston who was refreshingly honest about how chaotic it is there. Accounting quiz, which I think went fine. In Strategy nobody in our group wanted to present the case, so I said I would. Presented to the whole section, took a couple of questions from the back, one I didn't totally know, so I said that and took a guess. Then a two-hour group meeting that should have been forty minutes. Marcus and I are good again; he brought me a coffee without asking, which is how he apologizes for accepting an apology. Brightpath HR emailed a friendly reminder about November 1. Going to bed at 10 like an adult.",
+      "photo": "lecture_hall.jpg"
+    },
+    {
+      "id": "e18",
+      "date": "2026-10-22",
+      "title": "Paint water",
+      "text": "Digging for my winter coat in the hall closet tonight, I found my old travel watercolor set in a shoebox under the boots, the little tin one Nai Nai bought me at a stationery store in Fremont when I was sixteen. Half the pans are cracked and the ultramarine is basically gone. I sat on the kitchen floor and painted the maple outside my window on the back of a coffee chat printout, with a jam jar of water and a brush that has lost most of its hairs. It took twenty minutes. It's lopsided and the tree looks like broccoli. I liked doing it more than anything else I did this week. I took a picture and sent it to Nai Nai before I could overthink it. She replied with three thumbs up and \"persimmon next.\" The paint water is still sitting on the counter. I'm leaving it there.",
+      "photo": "watercolor_paints.jpg"
+    }
+  ]
+}
