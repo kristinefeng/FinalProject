@@ -24,8 +24,8 @@
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .big { font-family: var(--serif); font-size: 2.1em; line-height: 1.05; }
-  .muted { color: var(--muted); font-size: .62em; }
-  .small { font-size: .62em; }
+  .muted { color: var(--muted); font-size: .66em; }
+  .small { font-size: .72em; }
   .pill { display: inline-block; padding: 3px 14px; border-radius: 999px; font-size: .55em; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
   .pill.sage { background: var(--sagebg); color: var(--sage); } .pill.clay { background: var(--claybg); color: #9c5b3e; }
   .reveal table { font-size: .6em; } .reveal table th { color: var(--muted); }
@@ -56,14 +56,39 @@
 <section>
   <div class="eyebrow">The problem</div>
   <h2>We capture everything and step back from nothing.</h2>
-  <!--SLIDE_PROBLEM-->
+  <div class="grid3" style="margin-top:.6em">
+    <div class="card"><div class="big">9 trillion</div><div class="muted">photos and videos stored in Google Photos alone (Google, 2025)</div></div>
+    <div class="card"><div class="big">92% → 54%</div><div class="muted">say relationships give life meaning, yet feel isolated at least sometimes (APA, 2025)</div></div>
+    <div class="card"><div class="big">34%</div><div class="muted">of 18–34-year-olds rate their stress 8–10 out of 10 (APA, 2023)</div></div>
+  </div>
+  <p class="small" style="margin-top:1em">We consistently <b>underestimate</b> how much rediscovering ordinary moments will mean to us (Zhang et al., <i>Psych. Science</i>, 2014). Photo apps resurface by date, journals go unread, and goal apps add pressure. Life doesn't come with a handbook, and most of us never step back to look at the one we're writing.</p>
 </section>
 
 <!-- 3. What's new -->
 <section>
   <div class="eyebrow">What's new</div>
   <h2>Not another AI journal: a mirror you can argue with.</h2>
-  <!--SLIDE_NEW-->
+  <div class="row" style="align-items:flex-start; gap:28px">
+    <div class="col card small">
+      <b>Already exists</b>
+      <ul style="margin-top:.4em">
+        <li>AI patterns across entries: Rosebud, Day One, Mindsera, Stoic</li>
+        <li>Links back to entries: Rosebud, Day One</li>
+        <li>Remembering feedback: Rosebud, ChatGPT memory</li>
+        <li>Photo resurfacing: Apple and Google Photos</li>
+      </ul>
+    </div>
+    <div class="col card small" style="border-color:var(--sage); background:#fbfdfb">
+      <b>The combination no product I reviewed documents</b>
+      <ul style="margin-top:.4em">
+        <li><b>Every observation quotes your exact words,</b> and code verifies them</li>
+        <li>Judged against <b>values you wrote</b>, not a personality the AI infers</li>
+        <li>“Resonates / partly / not me”: <b>it adapts</b></li>
+        <li>Values change <b>only when you click Accept</b></li>
+        <li>No streaks, no scores: <b>a mirror, not a coach</b></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- 4. Agents -->
@@ -201,7 +226,13 @@
 <!-- 9. Impact -->
 <section>
   <div class="eyebrow">Impact · the numbers</div>
-  <!--SLIDE_IMPACT-->
+  <h2>Perspective in seconds, with evidence you can trust</h2>
+  <div class="grid3" style="margin-bottom:20px">
+    <div class="card"><div class="big">10 min → 20 s</div><div class="muted">rereading Maya's 18 entries vs. one Zoom Out, which also finds the patterns</div></div>
+    <div class="card"><div class="big">100%</div><div class="muted">of quotes shown were verified against the entry they cite</div></div>
+    <div class="card"><div class="big">10,000 people</div><div class="muted">for about $100 a month in model costs</div></div>
+  </div>
+  <!--SLIDE_STUDY-->
 </section>
 
 <!-- 10. Next -->
