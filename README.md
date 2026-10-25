@@ -2,7 +2,7 @@
 
 **Throughline is your weekly step-back: five minutes to see the bigger picture of your life, in your own words.**
 
-It's for people in a demanding season (MBA recruiting, a first job, a new baby). You save small moments as you go, a few lines and often a photo, and write down what matters to you. At the end of a week that blurred together, press **Zoom Out**. Three agents show you what the week held, what's quietly slipping and how you've grown, quoting your own words as evidence for every observation, and ask you one good question. You have the final say: tell it what's true, and it listens.
+It's for people in a demanding season (MBA recruiting, a first job, a new baby). You save small moments as you go, a few lines and often a photo, and write down what matters to you. At the end of a week that blurred together, press **Zoom Out**. Three agents show you what the week held, what's quietly slipping and how you've grown, quoting your own words as evidence for every observation, and ask you one good question. You shape the story: adjust what doesn't fit, and decide where it goes from here.
 
 > *"I feel a little more connected to myself, and I have a clearer perspective on my life."*
 

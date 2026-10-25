@@ -172,7 +172,7 @@ function Welcome({ onChoose }: { onChoose: (s: Space) => void }) {
           Life doesn't come with a handbook, and most weeks we're too busy living it to step back. Save small
           moments as you go, a line and a photo, and write down what matters to you. When a week blurs together,
           press <b>Zoom Out</b>: Throughline shows you the bigger picture in your own words and asks one good
-          question. You have the final say.
+          question. You shape the story: adjust what doesn't fit, and decide where it goes.
         </p>
         <div className="grid grid-2" style={{ marginTop: 28 }}>
           <button className="choice" onClick={() => onChoose("demo")}>
