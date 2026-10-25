@@ -33,8 +33,8 @@ def image_uri(path: Path, max_width: int = MAX_WIDTH, quality: int = 78) -> str:
 
 
 def render(src: str) -> str:
-    diagram = (DOCS / "diagram.svg").read_text(encoding="utf-8")
-    src = src.replace("{{diagram}}", diagram)
+    src = src.replace("{{diagram_slides}}", (DOCS / "diagram_slides.svg").read_text(encoding="utf-8"))
+    src = src.replace("{{diagram}}", (DOCS / "diagram.svg").read_text(encoding="utf-8"))
     src = re.sub(r"\{\{img:([\w.-]+)\}\}", lambda m: image_uri(SHOTS / f"{m.group(1)}.jpg"), src)
     src = re.sub(r"\{\{photo:([\w.-]+)\}\}", lambda m: image_uri(PHOTOS / m.group(1), max_width=900), src)
     leftover = [m for m in re.findall(r"\{\{[^}]+\}\}", src) if not m.startswith("{{vendor:")]

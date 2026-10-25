@@ -6,4 +6,5 @@ openai>=1.40,<4
 python-dotenv>=1.0
 python-multipart>=0.0.9
 pillow>=10.0
+pillow-heif>=0.18   # opens iPhone (HEIC) photos
 pytest>=8.0

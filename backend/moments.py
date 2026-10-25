@@ -8,7 +8,14 @@ import uuid
 from pathlib import Path
 from typing import Any
 
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
+
+try:  # iPhone photos are HEIC by default; this teaches Pillow to open them.
+    from pillow_heif import register_heif_opener
+
+    register_heif_opener()
+except ImportError:  # the app still runs; HEIC uploads get a clear message instead
+    pass
 
 import db
 from agents.memory_keeper import tag_entry
@@ -33,7 +40,12 @@ def photo_path(space: str, filename: str | None) -> Path | None:
 
 def store_photo(space: str, data: bytes) -> str:
     """Re-encode the upload as a JPEG (drops EXIF location data, caps size)."""
-    with Image.open(io.BytesIO(data)) as img:
+    try:
+        img = Image.open(io.BytesIO(data))
+        img.load()
+    except (UnidentifiedImageError, OSError, ValueError) as exc:
+        raise ValueError("Throughline couldn't read that photo. Try a JPEG or PNG, or save it without the photo.") from exc
+    with img:
         img = img.convert("RGB")
         img.thumbnail((MAX_PHOTO_PX, MAX_PHOTO_PX))
         folder = db.UPLOADS_DIR / space

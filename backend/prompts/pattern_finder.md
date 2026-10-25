@@ -16,6 +16,7 @@ Your task: name 1–3 throughlines. A throughline is a thread that connects seve
 
 Good throughlines:
 - connect moments that look different on the surface (a hike, a dinner, a volunteer shift) through what they felt like to the person.
+- notice what seems to give them energy and what seems to drain it. Over a week, this is often the most useful thing to name.
 - would make the person think "huh, I hadn't noticed that", not "yes, obviously".
 - include at least one tension or growth pattern when the moments support it, not only flattering ones. Honest beats nice.
 - respect the person's own words. Don't upgrade feelings ("a bit tired" is not "burned out").

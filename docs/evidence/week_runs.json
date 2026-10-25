@@ -1,0 +1,61 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "status": "ok",
+      "seconds": 18.6,
+      "cost_usd": 0.00157325,
+      "requests": 3,
+      "input_tokens": 7127,
+      "cached_input_tokens": 2907,
+      "output_tokens": 2099,
+      "headline": "A small return to what matters",
+      "throughlines": [
+        "alignment: A little paint, a thread to Nai Nai",
+        "growth: Showing up after a rough stretch"
+      ],
+      "quotes_dropped": 0
+    },
+    {
+      "run": 2,
+      "status": "ok",
+      "seconds": 15.1,
+      "cost_usd": 0.00094944,
+      "requests": 3,
+      "input_tokens": 7082,
+      "cached_input_tokens": 5814,
+      "output_tokens": 1529,
+      "headline": "A week of showing up and making room",
+      "throughlines": [
+        "growth: Willingness before certainty",
+        "growth: Painting moved from thought to moment"
+      ],
+      "quotes_dropped": 0
+    },
+    {
+      "run": 3,
+      "status": "ok",
+      "seconds": 17.3,
+      "cost_usd": 0.00120604,
+      "requests": 3,
+      "input_tokens": 7078,
+      "cached_input_tokens": 5814,
+      "output_tokens": 2043,
+      "headline": "A week of making room for what matters",
+      "throughlines": [
+        "alignment: Painting became a way back to Nai Nai",
+        "growth: You moved before certainty caught up"
+      ],
+      "quotes_dropped": 0
+    }
+  ],
+  "average": {
+    "seconds": 17.0,
+    "cost_usd": 0.001243,
+    "requests": 3,
+    "input_tokens": 7095.666667,
+    "cached_input_tokens": 4845,
+    "output_tokens": 1890.333333,
+    "quotes_dropped": 0
+  }
+}

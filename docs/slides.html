@@ -114,72 +114,57 @@
 <section>
   <div class="eyebrow">How the agents work</div>
   <h2 style="margin-bottom:.2em">Three agents, four checks in plain code</h2>
-  <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="Throughline agent architecture">
+  <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="How Throughline's agents work">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="arrow-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#8d867b"/>
     </marker>
     <style>
-      .lane { font-size: 11px; font-weight: 700; letter-spacing: .12em; fill: #8d867b; }
-      .agent rect { fill: #2c2a26; }
-      .agent .t { fill: #fff; font-size: 13px; font-weight: 700; }
-      .agent .s { fill: #d9d3c7; font-size: 10.5px; }
-      .code rect { fill: #e3ebe4; stroke: #5e7f6b; stroke-width: 1.2; }
-      .code .t { fill: #3f5a49; font-size: 13px; font-weight: 700; }
-      .code .s { fill: #5e7f6b; font-size: 10.5px; }
-      .data rect { fill: #f6e6dc; stroke: #c9805e; stroke-width: 1.2; }
-      .data .t { fill: #8a4f35; font-size: 13px; font-weight: 700; }
-      .data .s { fill: #9c5b3e; font-size: 10.5px; }
-      .arrow { stroke: #8d867b; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
-      .dash { stroke-dasharray: 4 4; }
-      .note { font-size: 10.5px; fill: #8d867b; }
+      .lane-s { font-size: 15px; font-weight: 700; letter-spacing: .14em; fill: #8d867b; }
+      .ag rect { fill: #2c2a26; } .ag .t { fill: #fff; font-size: 21px; font-weight: 700; } .ag .s { fill: #d9d3c7; font-size: 15.5px; }
+      .cd rect { fill: #e3ebe4; stroke: #5e7f6b; stroke-width: 1.5; } .cd .t { fill: #3f5a49; font-size: 21px; font-weight: 700; } .cd .s { fill: #5e7f6b; font-size: 15.5px; }
+      .yo rect { fill: #f6e6dc; stroke: #c9805e; stroke-width: 1.5; } .yo .t { fill: #8a4f35; font-size: 21px; font-weight: 700; } .yo .s { fill: #9c5b3e; font-size: 15.5px; }
+      .ar { stroke: #8d867b; stroke-width: 2.2; fill: none; marker-end: url(#arrow-s); }
+      .nt { font-size: 15px; fill: #8d867b; }
     </style>
   </defs>
 
-  <!-- Lane 1: save a moment -->
-  <text class="lane" x="20" y="24">SAVE A MOMENT</text>
-  <g class="data"><rect x="20" y="36" width="112" height="58" rx="10"/><text class="t" x="76" y="60" text-anchor="middle">Entry + photo</text><text class="s" x="76" y="78" text-anchor="middle">you write it</text></g>
-  <g class="code"><rect x="148" y="36" width="112" height="58" rx="10"/><text class="t" x="204" y="60" text-anchor="middle">Care check</text><text class="s" x="204" y="78" text-anchor="middle">crisis → resources</text></g>
-  <g class="code"><rect x="276" y="36" width="112" height="58" rx="10"/><text class="t" x="332" y="60" text-anchor="middle">Injection scan</text><text class="s" x="332" y="78" text-anchor="middle">flagged → held back</text></g>
-  <g class="agent"><rect x="404" y="36" width="132" height="58" rx="10"/><text class="t" x="470" y="60" text-anchor="middle">Memory Keeper</text><text class="s" x="470" y="78" text-anchor="middle">summary, tags, photo</text></g>
-  <g class="data"><rect x="552" y="36" width="112" height="58" rx="10"/><text class="t" x="608" y="60" text-anchor="middle">SQLite</text><text class="s" x="608" y="78" text-anchor="middle">local, per space</text></g>
-  <path class="arrow" d="M132 65 H146"/><path class="arrow" d="M260 65 H274"/><path class="arrow" d="M388 65 H402"/><path class="arrow" d="M536 65 H550"/>
-  <text class="note" x="684" y="58">One vision call per photo, once.</text>
-  <text class="note" x="684" y="74">Later steps read cheap text, not images.</text>
-
-  <!-- Lane 2: zoom out -->
-  <text class="lane" x="20" y="146">ZOOM OUT</text>
-  <g class="code"><rect x="20" y="158" width="104" height="66" rx="10"/><text class="t" x="72" y="184" text-anchor="middle">Care pause</text><text class="s" x="72" y="202" text-anchor="middle">+ budget check</text></g>
-  <g class="code"><rect x="138" y="158" width="104" height="66" rx="10"/><text class="t" x="190" y="184" text-anchor="middle">Router</text><text class="s" x="190" y="202" text-anchor="middle">read all ≤ 40, else</text><text class="s" x="190" y="215" text-anchor="middle">search</text></g>
-  <g class="agent"><rect x="256" y="158" width="132" height="66" rx="10"/><text class="t" x="322" y="182" text-anchor="middle">Memory Keeper</text><text class="s" x="322" y="199" text-anchor="middle">search_memories</text><text class="s" x="322" y="213" text-anchor="middle">recent_memories</text></g>
-  <g class="agent"><rect x="402" y="158" width="132" height="66" rx="10"/><text class="t" x="468" y="182" text-anchor="middle">Pattern Finder</text><text class="s" x="468" y="199" text-anchor="middle">get_memory</text><text class="s" x="468" y="213" text-anchor="middle">get_past_feedback</text></g>
-  <g class="code"><rect x="548" y="158" width="112" height="66" rx="10"/><text class="t" x="604" y="184" text-anchor="middle">Grounding</text><text class="s" x="604" y="202" text-anchor="middle">every quote must</text><text class="s" x="604" y="215" text-anchor="middle">be in its entry</text></g>
-  <g class="agent"><rect x="674" y="158" width="104" height="66" rx="10"/><text class="t" x="726" y="184" text-anchor="middle">Mirror</text><text class="s" x="726" y="202" text-anchor="middle">reflection +</text><text class="s" x="726" y="215" text-anchor="middle">one question</text></g>
-  <g class="data"><rect x="792" y="158" width="108" height="66" rx="10"/><text class="t" x="846" y="184" text-anchor="middle">You read it</text><text class="s" x="846" y="202" text-anchor="middle">quotes link to</text><text class="s" x="846" y="215" text-anchor="middle">your moments</text></g>
-  <path class="arrow" d="M124 191 H136"/><path class="arrow" d="M242 191 H254"/><path class="arrow" d="M388 191 H400"/><path class="arrow" d="M534 191 H546"/><path class="arrow" d="M660 191 H672"/><path class="arrow" d="M778 191 H790"/>
-  <path class="arrow dash" d="M190 224 V244 H468 V226"/>
-  <text class="note" x="200" y="258">≤ 40 moments: read in full, skip search</text>
-
-  <!-- Lane 3: reflect back -->
-  <text class="lane" x="20" y="306">REFLECT BACK</text>
-  <g class="data"><rect x="20" y="318" width="150" height="58" rx="10"/><text class="t" x="95" y="342" text-anchor="middle">Your response</text><text class="s" x="95" y="360" text-anchor="middle">resonates · partly · not me</text></g>
-  <g class="agent"><rect x="190" y="318" width="170" height="58" rx="10"/><text class="t" x="275" y="342" text-anchor="middle">Mirror</text><text class="s" x="275" y="360" text-anchor="middle">propose_north_star_update</text></g>
-  <g class="code"><rect x="380" y="318" width="140" height="58" rx="10"/><text class="t" x="450" y="342" text-anchor="middle">Staged suggestion</text><text class="s" x="450" y="360" text-anchor="middle">nothing changes yet</text></g>
-  <g class="data"><rect x="540" y="318" width="120" height="58" rx="10"/><text class="t" x="600" y="342" text-anchor="middle">You click</text><text class="s" x="600" y="360" text-anchor="middle">Accept or Not now</text></g>
-  <g class="data"><rect x="680" y="318" width="120" height="58" rx="10"/><text class="t" x="740" y="342" text-anchor="middle">North Star</text><text class="s" x="740" y="360" text-anchor="middle">values updated</text></g>
-  <path class="arrow" d="M170 347 H188"/><path class="arrow" d="M360 347 H378"/><path class="arrow" d="M520 347 H538"/><path class="arrow" d="M660 347 H678"/>
-  <text class="note" x="20" y="394">Your responses are saved. On the next Zoom Out, the Pattern Finder reads them with get_past_feedback, so it learns what does and doesn't fit.</text>
-
-  <!-- Ledger -->
-  <rect x="20" y="404" width="880" height="44" rx="10" fill="#efe8dc"/>
-  <text x="40" y="431" font-size="12.5" fill="#5d5850"><tspan font-weight="700" fill="#2c2a26">Ledger</tspan>  ·  every model request is metered as it returns  ·  caps: $0.05 per run, $1.00 per day, 2–6 requests per agent  ·  model: gpt-6-luna via Portkey</text>
-
-  <!-- Legend -->
-  <g transform="translate(700,24)">
-    <rect x="0" y="-10" width="12" height="12" rx="3" fill="#2c2a26"/><text x="18" y="0" font-size="10.5" fill="#5d5850">AI agent</text>
-    <rect x="70" y="-10" width="12" height="12" rx="3" fill="#e3ebe4" stroke="#5e7f6b"/><text x="88" y="0" font-size="10.5" fill="#5d5850">plain code</text>
-    <rect x="150" y="-10" width="12" height="12" rx="3" fill="#f6e6dc" stroke="#c9805e"/><text x="168" y="0" font-size="10.5" fill="#5d5850">you / data</text>
+  <!-- legend -->
+  <g transform="translate(830,30)" font-size="15" fill="#5d5850">
+    <rect x="0" y="-13" width="16" height="16" rx="4" fill="#2c2a26"/><text x="24" y="0">AI agent</text>
+    <rect x="110" y="-13" width="16" height="16" rx="4" fill="#e3ebe4" stroke="#5e7f6b"/><text x="134" y="0">plain code</text>
+    <rect x="236" y="-13" width="16" height="16" rx="4" fill="#f6e6dc" stroke="#c9805e"/><text x="260" y="0">you</text>
   </g>
+
+  <!-- save a moment -->
+  <text class="lane-s" x="20" y="34">SAVE A MOMENT</text>
+  <g class="yo"><rect x="20" y="48" width="250" height="84" rx="14"/><text class="t" x="145" y="84" text-anchor="middle">You save a moment</text><text class="s" x="145" y="110" text-anchor="middle">a line, a photo, an idea</text></g>
+  <g class="cd"><rect x="310" y="48" width="270" height="84" rx="14"/><text class="t" x="445" y="84" text-anchor="middle">Safety checks</text><text class="s" x="445" y="110" text-anchor="middle">crisis care · injection scan</text></g>
+  <g class="ag"><rect x="620" y="48" width="300" height="84" rx="14"/><text class="t" x="770" y="84" text-anchor="middle">Memory Keeper</text><text class="s" x="770" y="110" text-anchor="middle">summary, tags, photo described</text></g>
+  <path class="ar" d="M270 90 H306"/><path class="ar" d="M580 90 H616"/>
+  <text class="nt" x="945" y="86">Each photo is read once.</text>
+  <text class="nt" x="945" y="108">Later steps use cheap text.</text>
+
+  <!-- zoom out -->
+  <text class="lane-s" x="20" y="200">ZOOM OUT</text>
+  <g class="ag"><rect x="20" y="214" width="250" height="84" rx="14"/><text class="t" x="145" y="250" text-anchor="middle">Memory Keeper*</text><text class="s" x="145" y="276" text-anchor="middle">finds the moments</text></g>
+  <g class="ag"><rect x="310" y="214" width="270" height="84" rx="14"/><text class="t" x="445" y="250" text-anchor="middle">Pattern Finder</text><text class="s" x="445" y="276" text-anchor="middle">names the threads, with quotes</text></g>
+  <g class="cd"><rect x="620" y="214" width="250" height="84" rx="14"/><text class="t" x="745" y="250" text-anchor="middle">Grounding check</text><text class="s" x="745" y="276" text-anchor="middle">every quote verified</text></g>
+  <g class="ag"><rect x="910" y="214" width="270" height="84" rx="14"/><text class="t" x="1045" y="250" text-anchor="middle">Mirror</text><text class="s" x="1045" y="276" text-anchor="middle">reflection + one question</text></g>
+  <path class="ar" d="M270 256 H306"/><path class="ar" d="M580 256 H616"/><path class="ar" d="M870 256 H906"/>
+  <text class="nt" x="20" y="326">* small journals are read in full instead of searched: cheaper, thanks to prompt caching</text>
+
+  <!-- reflect back -->
+  <text class="lane-s" x="20" y="384">REFLECT BACK</text>
+  <g class="yo"><rect x="20" y="398" width="250" height="84" rx="14"/><text class="t" x="145" y="434" text-anchor="middle">You respond</text><text class="s" x="145" y="460" text-anchor="middle">resonates · partly · not me</text></g>
+  <g class="ag"><rect x="310" y="398" width="270" height="84" rx="14"/><text class="t" x="445" y="434" text-anchor="middle">Mirror</text><text class="s" x="445" y="460" text-anchor="middle">listens, may suggest a change</text></g>
+  <g class="yo"><rect x="620" y="398" width="250" height="84" rx="14"/><text class="t" x="745" y="434" text-anchor="middle">You decide</text><text class="s" x="745" y="460" text-anchor="middle">accept, or not now</text></g>
+  <g class="yo"><rect x="910" y="398" width="270" height="84" rx="14"/><text class="t" x="1045" y="434" text-anchor="middle">North Star</text><text class="s" x="1045" y="460" text-anchor="middle">your values and goals</text></g>
+  <path class="ar" d="M270 440 H306"/><path class="ar" d="M580 440 H616"/><path class="ar" d="M870 440 H906"/>
+
+  <!-- ledger -->
+  <rect x="20" y="520" width="1160" height="58" rx="14" fill="#efe8dc"/>
+  <text x="44" y="556" font-size="17" fill="#5d5850"><tspan font-weight="700" fill="#2c2a26">Every request is metered</tspan>  ·  caps: $0.05 per run, $1 per day, a few requests per agent  ·  gpt-6-luna via Portkey</text>
 </svg>
 </div>
 </section>
@@ -220,9 +205,9 @@
   <div class="eyebrow">Cost to run · measured, gpt-6-luna</div>
   <h2>About a penny per person per month</h2>
   <div class="grid3" style="margin-bottom:22px">
-    <div class="card"><div class="big">$0.0012</div><div class="muted">per Zoom Out ($0.0018 with search)</div></div>
+    <div class="card"><div class="big">$0.0012</div><div class="muted">per weekly Zoom Out ($0.0018 with search)</div></div>
     <div class="card"><div class="big">~1¢</div><div class="muted">per user per month</div></div>
-    <div class="card"><div class="big">$101</div><div class="muted">per month for 10,000 users</div></div>
+    <div class="card"><div class="big">$97</div><div class="muted">per month for 10,000 users</div></div>
   </div>
   <div class="grid2">
     <div class="card small"><b>Cut cost:</b> photos read once and shrunk (−36% tokens, same description); stable prompt first (cached at 1/10 price); caps of $0.05 per run and $1 per day.</div>

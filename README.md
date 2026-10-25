@@ -110,7 +110,7 @@ RUN_LIVE=1 python -m pytest backend/tests/test_live_attack.py -q   # optional, c
 
 ## Cost
 
-Measured costs on `gpt-6-luna` ($0.10 / $0.01 cached / $0.50 per million input / cached input / output tokens) appear on the app's **Cost** screen and in `docs/evidence/`. A Zoom Out costs about a tenth of a cent. Indexing all 18 demo moments, photos included, cost $0.0032. The cost-vs-quality experiment is in `backend/experiments/cost_experiment.py`.
+Measured costs on `gpt-6-luna` ($0.10 / $0.01 cached / $0.50 per million input / cached input / output tokens) appear on the app's **Cost** screen and in `docs/evidence/`. A weekly Zoom Out averages $0.0012 (three independent runs, `docs/evidence/week_runs.json`), and about a cent covers a typical user's month. Indexing all 18 demo moments, photos included, cost $0.0032. The cost-vs-quality experiment is in `backend/experiments/cost_experiment.py`.
 
 ## Repo layout
 
