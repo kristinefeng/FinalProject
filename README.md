@@ -2,7 +2,12 @@
 
 **Throughline is your weekly step-back: five minutes to see the bigger picture of your life, in your own words.**
 
-It's for people in a demanding season (MBA recruiting, a first job, a new baby). You save small moments as you go, a few lines and often a photo, and write down what matters to you. At the end of a week that blurred together, press **Zoom Out**. Three agents show you what the week held, what's quietly slipping and how you've grown, quoting your own words as evidence for every observation, and ask you one good question. You shape the story: adjust what doesn't fit, and decide where it goes from here.
+Life gets busy, and most of us are just trying to get through the day. We take photos we never look at again, write journal entries we never reread, and set goals in apps that only add to the to-do list, so the pieces never connect. Throughline gives you intentional space to connect them:
+- Save moments, photos and ideas as you go.
+- Write down what matters to you and where you're headed.
+- At the end of a week that blurred together, press **Zoom Out**. Three agents find the threads connecting your moments to what matters to you, quote your own words as evidence, and open with a question.
+
+It's a team effort: the AI does the connecting, and you do the reflecting. You shape the story by adjusting what doesn't fit and deciding where it goes from here.
 
 > *"I feel a little more connected to myself, and I have a clearer perspective on my life."*
 

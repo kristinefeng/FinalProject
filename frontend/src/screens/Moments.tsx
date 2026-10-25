@@ -108,8 +108,8 @@ export default function Moments({ ctx }: { ctx: AppCtx }) {
           <label className="field">Title<input type="text" value={title} placeholder="Optional" onChange={(e) => setTitle(e.target.value)} /></label>
         </div>
         <label className="field">
-          What happened, and how did it feel?
-          <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="A line or a page. Nobody else reads this." rows={7} />
+          What happened, or what's on your mind?
+          <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="A moment, a thought, an idea you don't want to lose. A line or a page; nobody else reads this." rows={7} />
         </label>
         <div className="photo-drop" onClick={() => fileRef.current?.click()}>
           {preview ? <img src={preview} alt="Selected" /> : "＋ Add a photo (optional)"}

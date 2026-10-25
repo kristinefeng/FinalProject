@@ -49,9 +49,9 @@ export default function Home({ ctx }: { ctx: AppCtx }) {
         </div>
         <div className="grid grid-3">
           {[
-            ["1", "Write your North Star", "A few values and what they mean to you. It takes two minutes and you can change it anytime.", "northstar", "Set my North Star"],
-            ["2", "Save three moments", "Something from this week, a photo you love, a day you don't want to forget.", "moments", "Add a moment"],
-            ["3", "Zoom Out", "Throughline connects your moments to what matters to you, and shows its evidence.", "zoom", "Try Zoom Out"],
+            ["1", "Write your North Star", "Your values and goals, in your own words. It takes two minutes and you can change it anytime.", "northstar", "Set my North Star"],
+            ["2", "Save three moments", "Something from this week, a photo you love, an idea you don't want to lose.", "moments", "Add a moment"],
+            ["3", "Zoom Out", "The AI connects the pieces and opens with a question. You do the reflecting.", "zoom", "Try Zoom Out"],
           ].map(([n, t, d, target, cta]) => (
             <div className="card stack" key={n}>
               <div className="stat" style={{ color: "var(--clay)" }}>{n}</div>
@@ -82,7 +82,7 @@ export default function Home({ ctx }: { ctx: AppCtx }) {
           <div className="eyebrow" style={{ color: "rgba(255,255,255,.7)" }}>Your weekly step-back</div>
           <h2 style={{ marginTop: 6 }}>Help me see the bigger picture.</h2>
           <p style={{ margin: "8px 0 18px" }}>
-            Five minutes to see what this week held and how it fits what matters to you, with your own words as evidence.
+            Throughline connects this week's moments to what matters to you and opens with a question. The AI does the connecting; you do the reflecting.
           </p>
           <button className="btn" onClick={() => go("zoom")}>Zoom out on this week →</button>
         </div>

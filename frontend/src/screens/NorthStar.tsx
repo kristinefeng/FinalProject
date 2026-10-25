@@ -40,8 +40,9 @@ export default function NorthStarScreen({ ctx }: { ctx: AppCtx }) {
         <div className="eyebrow">Look ahead</div>
         <h1 style={{ marginTop: 6 }}>{ctx.space === "demo" ? "Maya's North Star" : "Your North Star"}</h1>
         <p className="lede">
-          Not goals to hit. A few things that matter to you, in your own words. Zoom Out holds your moments up against
-          these, and you can change them anytime, including when a reflection shows you something new.
+          What matters to you and where you're headed: your values, a picture of the life you hope for, and goals for
+          this season, in your own words. It's not a to-do list. Zoom Out holds your moments up against it, and you can
+          change it anytime, including when a reflection shows you something new.
         </p>
       </div>
 
@@ -77,7 +78,7 @@ export default function NorthStarScreen({ ctx }: { ctx: AppCtx }) {
       </section>
 
       <section className="card stack">
-        <h3>Intentions for this season</h3>
+        <h3>Goals and intentions for this season</h3>
         {intentions.map((t, i) => (
           <div className="row" key={i} style={{ flexWrap: "nowrap" }}>
             <input type="text" value={t} onChange={(e) => setIntentions(intentions.map((x, j) => (j === i ? e.target.value : x)))} />
@@ -85,7 +86,7 @@ export default function NorthStarScreen({ ctx }: { ctx: AppCtx }) {
           </div>
         ))}
         {intentions.length < 6 && (
-          <div><button className="btn secondary small" onClick={() => setIntentions([...intentions, ""])}>＋ Add an intention</button></div>
+          <div><button className="btn secondary small" onClick={() => setIntentions([...intentions, ""])}>＋ Add a goal or intention</button></div>
         )}
       </section>
 

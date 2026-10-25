@@ -169,10 +169,11 @@ function Welcome({ onChoose }: { onChoose: (s: Space) => void }) {
         </div>
         <h1 style={{ fontSize: 36 }}>Your weekly step-back.</h1>
         <p className="lede">
-          Life doesn't come with a handbook, and most weeks we're too busy living it to step back. Save small
-          moments as you go, a line and a photo, and write down what matters to you. When a week blurs together,
-          press <b>Zoom Out</b>: Throughline shows you the bigger picture in your own words and asks one good
-          question. You shape the story: adjust what doesn't fit, and decide where it goes.
+          Life gets busy, and most of us are just trying to get through the day. Throughline gives you intentional
+          space to step back and connect the pieces: save moments, photos and ideas as you go, and write down what
+          matters to you and where you're headed. When a week blurs together, press <b>Zoom Out</b>. The AI finds the
+          threads and opens with a question, so you never start from a blank page. It's a team effort: the AI does
+          the connecting, and you do the reflecting.
         </p>
         <div className="grid grid-2" style={{ marginTop: 28 }}>
           <button className="choice" onClick={() => onChoose("demo")}>

@@ -76,7 +76,7 @@ export default function ZoomOut({ ctx }: { ctx: AppCtx }) {
       <div>
         <div className="eyebrow">Zoom Out</div>
         <h1 style={{ marginTop: 6 }}>Your weekly step-back.</h1>
-        <p className="lede">Five minutes to see the bigger picture of your life, in your own words. Every observation shows the exact words it's based on, and you shape the story.</p>
+        <p className="lede">Five minutes to see the bigger picture of your life, in your own words. The AI connects the pieces and shows the exact words behind every observation. You do the reflecting, and you shape the story.</p>
       </div>
 
       <section className="stack">
