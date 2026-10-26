@@ -14,7 +14,6 @@ const NAV: { id: Screen; label: string }[] = [
   { id: "moments", label: "Moments" },
   { id: "northstar", label: "North Star" },
   { id: "zoom", label: "Zoom Out" },
-  { id: "usage", label: "Cost" },
 ];
 
 export interface AppCtx {
@@ -149,6 +148,7 @@ export default function App() {
               </button>
             )}
             <button onClick={() => go("study")}>Help test Throughline</button>
+            <button onClick={() => go("usage")}>Cost &amp; token usage</button>
           </span>
         </div>
       </footer>

@@ -57,12 +57,13 @@
     p { margin-bottom: 7px; }
     table { font-size: 8.8pt; margin: 6px 0 10px; } td, th { padding: 4px 6px; }
     figure { margin: 8px 0 10px; } figcaption { font-size: 8.5pt; }
-    figure img { max-height: 3.3in; width: auto; max-width: 100%; margin: 0 auto; }
-    .two figure img { max-height: 3.0in; }
+    figure img { max-height: 3.0in; width: auto; max-width: 100%; margin: 0 auto; }
+    .two figure img { max-height: 2.7in; }
     .callout { padding: 10px 14px; margin: 8px 0; }
     .kpis { margin: 8px 0 10px; } .kpi b { font-size: 18pt; }
     .steps li { padding-bottom: 6px; }
     .oneliner { font-size: 13pt; margin-top: 12px; }
+    .small { font-size: 8.3pt; }
   }
 </style>
 </head>
@@ -161,12 +162,7 @@
 <p><b>Feedback closes the loop.</b> When a person says a throughline is “partly” true or “not me”, the response is saved. The next Pattern Finder run reads it with <code>get_past_feedback</code>. In the run traced below, the Pattern Finder did exactly that.</p>
 
 <h3>Which model and why</h3>
-<p>All three agents use <b>gpt-6-luna</b>, the only model on the course key, through Portkey's OpenAI-compatible gateway and the Responses API (luna requires it for tool calling). Luna turned out to be a good fit, not just the only option:</p>
-<ul>
-  <li><b>It reads photos.</b> I tested this first with a generated image before designing the Memory Keeper around it.</li>
-  <li><b>It caches repeated prompt prefixes,</b> billed at a tenth of the input price.</li>
-  <li><b>It's cheap.</b> GPT-6 Astra is exactly 100× the price on every line.</li>
-</ul>
+<p>All three agents use <b>gpt-6-luna</b>, the only model on the course key, through Portkey's OpenAI-compatible gateway and the Responses API (luna requires it for tool calling). Luna turned out to be a good fit, not just the only option: <b>it reads photos</b> (I tested this with a generated image before designing the Memory Keeper around it), <b>it caches repeated prompt prefixes</b> at a tenth of the input price, and <b>it's cheap</b>: GPT-6 Astra is exactly 100× the price on every line.</p>
 <p>I set reasoning effort per agent. The Pattern Finder gets <i>medium</i>, because noticing a quiet tension across months is the hard part. The Memory Keeper and Mirror get <i>low</i>, since summarizing and writing in a set voice don't need it. Each agent also has a hard request limit: 2 requests to index a moment or write a reflection, 3 for Reflect Back, and 6 for search or pattern finding.</p>
 
 <h3>One real run, step by step</h3>
@@ -237,7 +233,7 @@
   <tr><td>Found a tension or growth pattern</td><td class="r">3 of 3 runs</td><td class="r">3 of 3 runs</td></tr>
 </table>
 <p>Reading everything was <b>35% cheaper</b> and cited <b>more moments</b>, with no loss in grounding. The whole journal is the same prompt every time, so almost all of it comes from the cache. Search picks different moments each time, which defeats the cache, and it adds the Memory Keeper's own requests. So I changed the design: journals up to 40 moments (about 10,000 tokens) are read in full, and search is used for custom questions and longer journals. Retrieval still matters at scale. Reading everything grows linearly with the journal and would eventually hit long-context pricing, which doubles above 272K tokens per request.</p>
-<figure><img src="{{img:11_cost}}" alt="Cost screen"><figcaption>Figure 6. The Cost screen shows the real tokens and cost of every run on this computer, plus per-user and 10,000-user projections computed from them.</figcaption></figure>
+<figure><img src="{{img:11_cost}}" alt="Cost screen"><figcaption>Figure 6. The Cost &amp; token usage screen shows the real tokens and cost of every run on this computer, plus per-user and 10,000-user projections computed from them. It averages every Zoom Out logged on this computer, including searches and testing, so its 10,000-user estimate ($105 a month) runs slightly above the controlled weekly measurement in the table ($97). After user feedback, it moved from the main menu to a footer link (Section 7).</figcaption></figure>
 
 <!-- 6. SAFETY -->
 <h2><span class="num">6</span>Safety</h2>
@@ -263,19 +259,29 @@
 </div>
 
 <h3>Agent malfunction and privacy</h3>
-<ul>
-  <li><b>Wrong action:</b> no agent can delete, send, or change anything. The only write (a North Star change) is staged and needs a click.</li>
-  <li><b>Looping:</b> request limits stop it. A stopped run returns a clear message and still shows its trace.</li>
-  <li><b>Provider errors:</b> they are caught and explained, never shown as a crash.</li>
-  <li><b>Privacy:</b> everything is stored locally in <code>data/</code>, which is never committed. Uploaded photos are re-encoded, which strips location metadata. Any moment can be deleted together with its photo, and the AI only receives the moments a Zoom Out needs.</li>
-</ul>
+<p><b>Wrong action:</b> no agent can delete, send or change anything; the only write (a North Star change) is staged and needs a click. <b>Looping:</b> request limits stop it, and a stopped run returns a clear message with its trace. <b>Provider errors</b> are caught and explained, never shown as a crash. <b>Privacy:</b> everything is stored locally in <code>data/</code>, which is never committed; uploaded photos are re-encoded, which strips location metadata; any moment can be deleted with its photo; and the AI only receives the moments a Zoom Out needs.</p>
 
 <!-- 7. IMPACT -->
 <h2><span class="num">7</span>Impact</h2>
-<p>Throughline doesn't save anyone money, and the time it saves isn't the main point. Its value is making it possible to step back at all on an ordinary, busy day. So I measured it four ways, and I say where each number comes from.</p>
+<p>Throughline doesn't save anyone money, and the time it saves isn't the main point. Its value is making it possible to step back at all on an ordinary, busy day. I looked at it four ways, and I say where each number comes from.</p>
 
 <h3>1. Real people tried it</h3>
-<!--STUDY-->
+<p>On October 25, a classmate used Throughline for about ten minutes. They explored Maya's demo journal first, then tried it with a few moments of their own. Before I explained anything, I asked what they thought the app does. In their words: <span class="quote">“Reflect on your life and also help you keep track of your North Star, what drives you as a person. Reflect and stay focused.”</span> That is close to the description we set out to communicate, so the welcome screen and home page seem to do their job.</p>
+<div class="two">
+  <div>
+    <table>
+      <tr><th>After the session (1 = strongly disagree, 5 = strongly agree)</th><th class="r">Score</th></tr>
+      <tr><td>The reflection helped me notice something about my week.</td><td class="r"><b>5</b></td></tr>
+      <tr><td>The reflection accurately represented what I shared.</td><td class="r"><b>4</b></td></tr>
+      <tr><td>I felt more connected to myself after using Throughline.</td><td class="r"><b>4</b></td></tr>
+      <tr><td>I would consider using Throughline weekly.</td><td class="r"><b>3</b></td></tr>
+    </table>
+    <div class="callout clay" style="margin-top:6px"><b>What it helped them notice:</b> <span class="quote">“I realized how out of focus I was and it helped me stay attuned to my goals and the type of person I want to be.”</span></div>
+  </div>
+  <figure style="margin-top:12px"><img src="{{img:17_user_feedback}}" alt="The classmate's feedback form"><figcaption>Figure 9. The classmate's feedback form, shared with permission and without their name.</figcaption></figure>
+</div>
+<p><b>What I changed because of it.</b> Asked what they would change, the classmate said: <span class="quote">“I'd remove the cost.”</span> They meant the Cost screen in the main menu. It exists to show token usage for this report, not to help a user reflect, so I moved it out of the menu into a footer link. A grader can still open it; a user no longer trips over it.</p>
+<p><b>How much this proves, honestly.</b> This is one person, in one ten-minute session, and a classmate may be inclined to be kind. The ratings were collected only after the session, so there's no before-and-after comparison. The most useful number is the lowest: <b>3 out of 5 on using it weekly.</b> For a product built around a weekly habit, that is the open question, and it is exactly what the four-week pilot in Section 8 is designed to answer.</p>
 
 <h3>2. Time: from ten minutes of rereading to under thirty seconds</h3>
 <p>Maya's 18 moments total 2,436 words. At an average adult silent-reading speed of 238 words per minute (Brysbaert, 2019, <i>Journal of Memory and Language</i>), simply rereading them takes about <b>10 minutes</b>. That's before the harder work of noticing that running disappeared in September, or that the watercolors were mentioned three times before she finally painted. A Zoom Out took <b>10–30 seconds</b> in every run I logged, and it hands back the patterns <i>with</i> the quotes behind them. This is a careful estimate from my own data, not a measured user time; the pilot in Section 8 would measure it directly.</p>
@@ -291,7 +297,7 @@
 <h3>What doesn't work yet</h3>
 <ul>
   <li><b>It's single-user and local.</b> There are no accounts, no sync, and no phone app. Capture has to happen at a computer, and that is the biggest gap given that most moments start as phone photos.</li>
-  <li><b>The evidence of impact is thin.</b> It comes from a small number of short first sessions. I can't yet show whether Throughline changes anything over weeks, which is the claim that matters.</li>
+  <li><b>The evidence of impact is thin.</b> It comes from one classmate's ten-minute session, rated only afterwards. I can't yet show whether Throughline changes anything over weeks, or whether people come back each week (the classmate gave weekly use a 3 out of 5), which is the claim that matters.</li>
   <li><b>The care check is a phrase list.</b> It's deliberately cautious and deterministic, but it is not a clinical screening tool, and it will miss indirect expressions of distress.</li>
   <li><b>Search is keyword-based (BM25 over the AI's tags).</b> The course key allows one model, so there are no embeddings.</li>
   <li><b>The provider's content filter can block a whole Zoom Out</b> if one released entry reads like a jailbreak. Throughline fails safely, but it doesn't yet say <i>which</i> moment caused it.</li>
