@@ -12,6 +12,7 @@ It's a team effort: the AI does the connecting, and you do the reflecting. You s
 > *"I feel a little more connected to myself, and I have a clearer perspective on my life."*
 
 Built by Kristine Feng for MGT 409 *AI Foundations for Managers* (Yale SOM, Fall 2026).
+Repo: https://github.com/kristinefeng/FinalProject
 
 ---
 
